@@ -12,7 +12,7 @@
         android:theme="@style/Theme.MaterialComponents.Light"
         android:name="br.com.alura.aluraesporte.AppApplication"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="br.com.alura.aluraesporte.ui.activity.ProdutosActivity">
+        <activity android:name="br.com.alura.aluraesporte.ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

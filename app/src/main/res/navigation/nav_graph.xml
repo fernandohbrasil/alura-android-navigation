@@ -11,7 +11,11 @@
         tools:layout="@layout/lista_produtos">
         <action
             android:id="@+id/acao_listaProdutos_para_detalhesProdutos"
-            app:destination="@id/detalhesProdutos" />
+            app:destination="@id/detalhesProdutos"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_open_exit" />
     </fragment>
 
     <fragment
@@ -21,7 +25,11 @@
         tools:layout="@layout/detalhes_produto">
         <action
             android:id="@+id/acao_detalhesProdutos_para_pagamento"
-            app:destination="@id/pagamento" />
+            app:destination="@id/pagamento"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
         <argument
             android:name="produtoId"
             app:argType="long" />
@@ -35,6 +43,8 @@
         <action
             android:id="@+id/acao_pagamento_para_listaProdutos"
             app:destination="@id/listaProdutos"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
             app:popUpTo="@+id/nav_graph" />
         <argument
             android:name="produtoId"
