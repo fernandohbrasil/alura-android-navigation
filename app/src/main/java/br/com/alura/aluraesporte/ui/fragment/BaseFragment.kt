@@ -16,7 +16,6 @@ import org.koin.android.viewmodel.ext.android.viewModel
 abstract class BaseFragment : Fragment() {
 
     private val loginViewModel: LoginViewModel by viewModel()
-    protected val estadoAppViewModel: EstadoAppViewModel by sharedViewModel()
     private val controlador by lazy {
         findNavController()
     }

@@ -91,4 +91,8 @@
             android:label="Cadastro de Usuario"
             tools:layout="@layout/cadastro_usuario" />
     </navigation>
+    <fragment
+        android:id="@+id/listaPagamentos"
+        android:name="br.com.alura.aluraesporte.ui.fragment.ListaPagamentoFragment"
+        android:label="Lista de Pagamentos" />
 </navigation>
