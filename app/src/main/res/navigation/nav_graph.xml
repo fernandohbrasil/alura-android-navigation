@@ -2,51 +2,48 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/login"
-    android:label="Login"
-    app:startDestination="@id/placeholder">
-
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listaProdutos">
     <fragment
         android:id="@+id/listaProdutos"
         android:name="br.com.alura.aluraesporte.ui.fragment.ListaProdutosFragment"
-        android:label="Lista de Produtos"
-        tools:layout="@layout/lista_produtos">
+        android:label="Lista de produtos"
+        tools:layout="@layout/lista_produtos" >
         <action
-            android:id="@+id/acao_listaProdutos_para_detalhesProdutos"
-            app:destination="@id/detalhesProdutos"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit"
-            app:popEnterAnim="@anim/fragment_open_enter"
-            app:popExitAnim="@anim/fragment_open_exit" />
+            android:id="@+id/acao_listaProdutos_para_detalhesProduto"
+            app:destination="@id/detalhesProduto"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
-
     <fragment
-        android:id="@+id/detalhesProdutos"
+        android:id="@+id/detalhesProduto"
         android:name="br.com.alura.aluraesporte.ui.fragment.DetalhesProdutoFragment"
-        android:label="Detalhes do Produto"
-        tools:layout="@layout/detalhes_produto">
+        android:label="Detalhes do produto"
+        tools:layout="@layout/detalhes_produto" >
         <action
-            android:id="@+id/acao_detalhesProdutos_para_pagamento"
+            android:id="@+id/acao_detalhesProduto_para_pagamento"
             app:destination="@id/pagamento"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_open_exit"
-            app:popEnterAnim="@anim/fragment_close_enter"
-            app:popExitAnim="@anim/fragment_close_exit" />
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <argument
             android:name="produtoId"
             app:argType="long" />
     </fragment>
-
-    <fragment
-        android:id="@+id/pagamento"
-        android:name="br.com.alura.aluraesporte.ui.fragment.PagamentoFragment"
+    <fragment android:id="@+id/pagamento"
         android:label="Pagamento"
+        android:name="br.com.alura.aluraesporte.ui.fragment.PagamentoFragment"
         tools:layout="@layout/pagamento">
         <action
-            android:id="@+id/acao_pagamento_para_listaProdutos"
+            android:id="@+id/acao_pagamento_para_listaProduto"
             app:destination="@id/listaProdutos"
-            app:enterAnim="@anim/slide_in_left"
-            app:exitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@+id/listaProdutos"
             app:popUpToInclusive="true" />
         <argument
@@ -54,8 +51,9 @@
             app:argType="long" />
     </fragment>
     <fragment
-        android:id="@+id/placeholder"
+        android:id="@+id/login"
         android:name="br.com.alura.aluraesporte.ui.fragment.LoginFragment"
+        android:label="Login"
         tools:layout="@layout/login">
         <action
             android:id="@+id/acao_login_para_listaProdutos"
@@ -67,4 +65,13 @@
             app:popUpTo="@+id/login"
             app:popUpToInclusive="true" />
     </fragment>
+    <action
+        android:id="@+id/acao_global_login"
+        app:destination="@id/login"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:popUpTo="@+id/listaProdutos"
+        app:popUpToInclusive="true" />
 </navigation>

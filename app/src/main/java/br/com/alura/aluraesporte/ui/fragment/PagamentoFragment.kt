@@ -83,7 +83,7 @@ class PagamentoFragment : Fragment() {
     }
 
     private fun vaiParaLIstaProdutos() {
-        val direcao = PagamentoFragmentDirections.acaoPagamentoParaListaProdutos()
+        val direcao = PagamentoFragmentDirections.acaoPagamentoParaListaProduto()
         controlador.navigate(direcao)
     }
 
